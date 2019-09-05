@@ -1,272 +1,1522 @@
 <!doctype html>
 <html lang="en">
+	
 <head>
 
-<!-- —————————— HEAD —————————— -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Charles Street Research</title>
 
-<title>Promo Starter</title>
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-<link rel="stylesheet" href="https://dentresearch.s3.amazonaws.com/Standardized%20Promo%20Styles/setup.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Serif+Pro:400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/xvw7rcc.css">
 
-<!-- —————————— INSERT HEADING FONTS HERE —————————— -->
-<link href="https://fonts.googleapis.com/css?family=Raleway:700" rel="stylesheet">
-
+	
 <style>
-/* —————————— SWAPPABLE FONTS —————————— */
-body {
-	font-family: 'Raleway', sans-serif!important;
+/* ———————————————————— COLORS ———————————————————— */
+h2, li:before {
+	color: royalblue;
 }
-p, li {
-	/* font-family: 'Source Serif Pro', serif!important; */
-	font-family: 'Open Sans', sans-serif!important;
+li:before, .quote, ol.square > li:before, .content-container.serif ol.square > li:before {
+    background: royalblue;
 }
-/* —————————— HIGHLIGHT COLOR —————————— */
-a, a.dotted:hover, ul.testimonials li span, ul.testimonials.style1 li:before, ul.check li:before, h3 {
-    color: skyblue;
+.tweet, .email {
+	box-shadow: 5px 5px royalblue;
 }
-h2.divider, h6, a.highlight, ul.dash li:before {
-    background: skyblue;
+/* ———————————————————— TYPOGRAPHY ———————————————————— */
+* {
+    -webkit-font-smoothing: antialiased;
 }
-ul.testimonials.style2 li, ul.indent li {
-    border-color: skyblue!important;
+html {
+  scroll-behavior: smooth;
 }
-/* —————————— HIGHLIGHT COLOR HOVER —————————— */
-a:hover {
-    color: pink;
+body .content-container {
+	font-family: Helvetica, Arial, sans-serif;
 }
-a.highlight:hover {
-    background: pink;
+body .content-container.serif, .quote {
+	font-family: minion-3, Times New Roman, serif;
 }
-/* —————————— DARK GRAY/BLUE COLOR —————————— */
-h2.divider.dark, .callout.dark, .guarantee.image h5  {
+h2 {
+    max-width: 680px;
+    margin: 60px auto 20px;
+    font-weight: 700;
+}
+h3 {
+    max-width: 680px;
+    margin: 20px auto;
+    font-weight: 700;
+}
+p, li, blockquote {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    max-width: 680px;
+    margin: 16px auto;
+}
+.content-container.serif p, .content-container.serif li {
+    font-size: 22px;
+    line-height: 32px;
+}
+p.lead, .large li {
+    font-size: 24px;
+    line-height: 34px;
+}
+.content-container.serif p.lead, .content-container.serif .large li {
+    font-size: 26px;
+    line-height: 36px;
+}
+p.eyebrow {
+    font-size: 17px;
+    font-weight: 700;
+}
+/* ———————————————————— LISTS ———————————————————— */
+li {
+    list-style: none;
+    max-width: 450px;
+}
+dl, ol, ul {
+    padding: 0;
+    max-width: 80%;
+    margin: 20px auto;
+}
+dl.thin, ol.thin, ul.thin {
+    max-width: 40%;
+}
+li:before {
+    content: " ";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    margin-top: 8px;
+    margin-left: -26px;
+}
+.circle > li:before {
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+}
+.check > li:before {
+    content: "\f00c";
+    font-family: FontAwesome;
+    position: absolute;
+    margin-top: -2px;
+    background: none;
+    margin-left: -32px;
+    font-size: 1.1em;
+}
+.check.green > li:before {
+    color: #0ead69;
+}
+.x > li:before {
+    content: "\f00d";
+    font-family: FontAwesome;
+    position: absolute;
+    margin-top: -2px;
+    background: none;
+    margin-left: -32px;
+    font-size: 1.1em;
+}
+.x.red > li:before {
+    color: #e64040;
+}
+.arrow > li:before {
+    content: "\f101";
+    font-family: FontAwesome;
+    position: absolute;
+    margin-top: -2px;
+    background: none;
+    margin-left: -28px;
+    font-size: 1.4em;
+}
+ol > li {
+    list-style-type: none;
+    counter-increment: item;
+}
+ol > li:before {
+    font-weight: bold;
+    content: counter(item) ".";
+    margin-left: -48px;
+    text-align: right;
+    width: 35px;
+    background: none;
+    margin-top: 0;
+}
+ol.square > li:before {
+    width: 30px;
+    color: #fff;
+    text-align: center;
+    padding: 3px 0;
+    margin-top: 0px;
+    content: counter(item);
+    font-size: 16px;
+    line-height: 24px;
+    height: 29px;
+}
+.large li:before {
+    height: 14px;
+    width: 14px;
+    margin-top: 10px;
+    margin-left: -30px;
+}
+.circle.large li:before {
+    margin-top: 12px;
+    margin-left: -28px;
+	height: 12px;
+    width: 12px;
+}
+.check.large > li:before {
+    margin-left: -38px;
+	margin-top: 0;
+}
+.x.large > li:before, .arrow.large > li:before {
+    margin-left: -36px;
+	margin-top: 0;
+}
+ol.large > li:before {
+    margin-left: -34px;
+    margin-top: 0;
+}
+ol.square.large > li:before {
+    margin-left: -44px;
+}
+.content-container.serif li:before {
+    margin-top: 10px;
+}
+.content-container.serif .circle > li:before {
+    margin-top: 12px;
+}
+.content-container.serif .check > li:before, .content-container.serif .x > li:before, .content-container.serif .arrow > li:before {
+    margin-top: -2px;
+    margin-left: -32px;
+}
+.content-container.serif ol > li:before {
+    font-weight: bold;
+    content: counter(item) ".";
+    margin-left: -48px;
+    text-align: right;
+    width: 35px;
+    background: none;
+    margin-top: 0;
+}
+.content-container.serif ol.square > li:before {
+    width: 30px;
+    color: #fff;
+    text-align: center;
+    padding: 3px 0;
+    margin-top: 0px;
+    content: counter(item);
+    font-size: 16px;
+    line-height: 24px;
+    height: 29px;
+}
+.content-container.serif .large li:before {
+    height: 14px;
+    width: 14px;
+    margin-top: 10px;
+    margin-left: -30px;
+}
+.content-container.serif .circle.large li:before {
+    margin-top: 12px;
+    margin-left: -28px;
+}
+.content-container.serif .check.large > li:before {
+    margin-left: -38px;
+	margin-top: 0;
+}
+.content-container.serif .x.large > li:before, .content-container.serif .arrow.large > li:before {
+    margin-left: -36px;
+	margin-top: 0;
+}
+.content-container.serif ol.large > li:before {
+    margin-left: -34px;
+    margin-top: 0;
+}
+.content-container.serif ol.square.large > li:before {
+    margin-left: -44px;
+	margin-top: 5px;
+}
+.none li:before {
+    display: none;
+}
+ol ol, ol ul, ul ol, ul ul {
+    margin-bottom: 0;
+    max-width: 60%;
+}
+/* —————————— TWITTER —————————— */
+.tweet {
+    border: 1px solid #e2e8ec;
+    padding: 20px;
+    border-radius: 5px;
+	height: 100%;
+}
+.tweet img {
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 12px;
+}
+.tweet .name {
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 700;
+    color: #1c1f21;
+	margin-bottom: 3px;
+}
+.tweet .username {
+    font-size: 15px;
+    line-height: 1;
+    color: #6c7881;
+}
+.tweet .tweet-head {
+    margin-bottom: 15px;
+	margin-top: 5px;
+}
+.tweet .replying-to, .tweet .meta {
+    font-size: 15px;
+    color: #6c7881;
+    margin: 5px 0
+}
+.tweet .meta {
+    position: absolute;
+    bottom: 20px;
+}
+.tweet .tweet-text {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 40px;
+}
+.tweet-head:before {
+    content: "\f099";
+    font-family: FontAwesome;
+    position: absolute;
+    right: 35px;
+    font-size: 18px;
+    color: #49a0ff;
+}
+.twitter .col-md-6 {
+    margin: 10px 0;
+}
+/* —————————— EMAIL —————————— */
+.email-snippet {
+    margin: 30px -10px 35px -15px;
+}
+.email {
+    border-radius: 0 0 5px 5px;
+}
+.email .head-content {
+    background: #e2e8ec;
+    color: #637082;
+    padding: 6px 12.5px;
+}
+.email .head-content i {
+    padding: 0 2.5px;
+}
+.email-content {
+    border: 1px solid #e2e8ec;
+    padding: 30px;
+    border-radius: 0 0 5px 5px;
+    font-size: 22px;
+    line-height: 1.4;
+}
+.email .from {
+    font-weight: 700;
+	margin-bottom: 2px;
+}
+.email .meta {
+    color: #6c7881;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+@media screen and (max-width: 575px) {
+	.email-content {
+		padding: 20px;
+	}
+}
+/* —————————— BLOCKQUOTE —————————— */
+blockquote {
+    border-left: 4px solid #00245C;
+    opacity: 1;
+    padding-left: 24px;
+    color: #777777;
+}
+/* ———————————————————— IMAGES ———————————————————— */
+.full-img {
+    max-width: 100%;
+    margin: 30px auto;
+}
+.float {
+    max-width: 35%;
+	margin-bottom: 20px;
+	clear: both;
+}
+.float.large {
+    max-width: 50%;
+}
+.float.small {
+    max-width: 20%;
+}
+.float.right {
+    float: right;
+    margin-left: 30px;
+}
+.float.left {
+    float: left;
+    margin-right: 30px;
+}
+span.caption {
+    font-weight: 700;
+    text-align: center;
+    display: block;
+    margin: 10px;
+}
+	
+.content-container {
+    padding-top: 15px;
+    padding-bottom: 20px;
+}	
+	
+	
+	
+.content-container {
+    max-width: 760px;
+	margin-bottom: 50px;
+}	
+.quote {
+    font-size: 28px;
+    line-height: 36px;
+    text-align: center;
+    font-style: italic;
+    font-weight: 600;
+    color: #fff;
+    padding: 20px;
+    margin-top: 6px;
+}
+blockquote {
+    max-width: 70%;
+    font-style: italic;
+    margin: 30px auto;
+    opacity: 0.5;
+    font-size: 1.5em;
+    line-height: 1.4em;
+    text-indent: -10px;
+    letter-spacing: 0.3px;
+}
+thead th {
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    font-weight: bolder;
+}
+span.circle:before {
+    content: url(https://csresearch.s3.amazonaws.com/DEL/2019/Promos/Incognito/Circle.png);
+    position: absolute;
+    transform: scale(0.6);
+    margin-left: -80px;
+    margin-top: -50px;
+}
+
+div#intro {
+    background: #f1f1f1;
+    margin-bottom: 40px;
+    padding: 40px 0;
+    overflow: hidden;
+    position: relative;
+}
+div#intro p {
+    max-width: 100%;
+}
+.headshot {
+    position: absolute;
+    right: 15%;
+    margin-top: -40px;
+    max-width: 400px;
+}
+div#intro.withHeadshot {
+    padding: 80px 0;
+}
+
+
+
+
+
+
+hr {
+    margin: 40px 0;
+}
+pre {
+    padding: 20px;
     background: #333;
+    border-radius: 0.4rem;
+    white-space: pre;
+    word-wrap: normal;
+    word-break: normal;
+    overflow-x: auto;
+    max-height: 200px;
+    color: #aed581;
+	max-width: 680px;
+	margin: 30px auto 40px;
 }
-.guarantee {
-    border-color: #333!important;
+
+
+
+a.btn {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 15px 30px;
+    color: #fff!important;
+    box-shadow: 0 4px 0 0 #d66f00, 0 0 0 1px #d66f00, 0 6px 0 1px #d66f00, 0 8px 2px 2px rgba(0,0,0,0.15);
+    border: none;
+    background: #ff9e00;
+    margin: 5px auto;
+    transition: 0.1s ease;
+	position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
-/* —————————— LIGHT COLOR —————————— */
-body, .guarantee {
-	background: #ebebeb;
+a.btn:hover {
+    margin: 10px auto 0;
+    box-shadow: 0 1px 0 0 #d66f00, 0 0 0 1px #d66f00, 0 1px 0 1px #d66f00, 0 3px 2px 2px rgba(0,0,0,0.15);
+    background: #d66f00;
+	position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
-/* —————————— TEMPLATE SPECIFIC —————————— */
+a.btn.green {
+    box-shadow: 0 4px 0 0 #4E6804, 0 0 0 1px #4E6804, 0 6px 0 1px #4E6804, 0 8px 2px 2px rgba(0,0,0,0.15);
+    background: #78A300;
+}
+a.btn.green:hover {
+    box-shadow: 0 1px 0 0 #4E6804, 0 0 0 1px #4E6804, 0 1px 0 1px #4E6804, 0 3px 2px 2px rgba(0,0,0,0.15);
+    background: #4E6804;
+}
+a.btn.red {
+    box-shadow: 0 4px 0 0 #960202, 0 0 0 1px #960202, 0 6px 0 1px #960202, 0 8px 2px 2px rgba(0,0,0,0.15);
+    background: #e21010;
+}
+a.btn.red:hover {
+    box-shadow: 0 1px 0 0 #960202, 0 0 0 1px #960202, 0 1px 0 1px #960202, 0 3px 2px 2px rgba(0,0,0,0.15);
+    background: #960202;
+}
+a.btn.gray {
+    box-shadow: 0 4px 0 0 #777, 0 0 0 1px #777, 0 6px 0 1px #777, 0 8px 2px 2px rgba(0,0,0,0.15);
+    background: #999;
+}
+a.btn.gray:hover {
+    box-shadow: 0 1px 0 0 #777, 0 0 0 1px #777, 0 1px 0 1px #777, 0 3px 2px 2px rgba(0,0,0,0.15);
+    background: #777;
+}
+
+@media (max-width: 1499px) {
+	.headshot {
+		right: 10%;
+	}
+}
+@media (max-width: 1399px) {
+	.headshot {
+		right: 5%;
+	}
+}
+@media (max-width: 1199px) {
+	.headshot {
+		right: -2%;
+	}
+}
+@media (max-width: 991px) {
+	.btn-row a.btn, .btn-row a.btn:hover {
+		font-size: 20px;
+		line-height: 24px;
+	}
+	.headshot {
+		position: absolute;
+		right: -10%;
+		margin-top: -20px;
+		max-width: 380px;
+	}
+	div#intro.withHeadshot {
+		padding: 60px 0;
+	}
+}
+@media screen and (max-width:767px) {
+	dl, ol, ul, dl.thin, ol.thin, ul.thin {
+		max-width: 75%;
+	}
+	.headshot {
+		position: relative;
+		right: 0;
+		max-width: 240px;
+		margin: 10px auto 0;
+	}
+	div#intro.withHeadshot {
+		padding: 40px 0 0;
+		text-align: center;
+	}
+	div#intro.withImage {
+		text-align: center;
+	}
+	div#intro.withImage img {
+		max-width: 240px;
+		margin-top: 10px;
+	}
+}
+@media screen and (max-width: 575px) {
+	.float, .float.right, .float.left {
+		float: none;
+		max-width: 100%;
+		margin-left: 0;
+		margin-bottom: 20px;
+		margin-right: 0;
+		text-align: center;
+	}
+	.float img {
+		max-height: 200px;
+		width: auto;
+	}
+	dl, ol, ul, dl.thin, ol.thin, ul.thin {
+		max-width: 70%;
+	}
+	div#intro.withHeadshot {
+		padding: 30px 0 0;
+	}
+	div#intro.withImage img {
+		max-width: 200px;
+	}
+}	
 </style>
-<!-- —————————— END HEAD —————————— -->
 
 </head>
-
+	
 <body>
 
-<!-- —————————— BODY —————————— -->
+<div class="container content-container">
+	<div class="row">
+		<div class="col-12">	
+	
+	
+<!--———————————————————— PROMO BODY CONTENT ———————————————————— -->
 
-<div class="container-fluid p-0">
-	<div id="promo" class="container p-0 bg-white">
-		<div class="row m-0">
+<h2>Buttons</h2>
+<p>Documentation and examples for various button types.</p>
 
-<!-- —————————— PROMO HEADER —————————— -->
+<h3>Orange Button (Default)</h3>
+<a href="#ORDER_FORM_LINK#" class="btn">Start My Risk-Free<br>Trial Today »</a>
+<pre><code>&lt;a href="#ORDER_FORM_LINK#" class="btn">Button Text »&lt;/a></code></pre>
 
-<!-- —————————— END PROMO HEADER —————————— -->
+<h3>Green Button</h3>
+<a href="#ORDER_FORM_LINK#" class="btn green">Start My Risk-Free<br>Trial Today »</a>
+<pre><code>&lt;a href="#ORDER_FORM_LINK#" class="btn green">Button Text »&lt;/a></code></pre>
 
-			<div class="content col col-12">
+<h3>Red Button</h3>
+<a href="#ORDER_FORM_LINK#" class="btn red">Start My Risk-Free<br>Trial Today »</a>
+<pre><code>&lt;a href="#ORDER_FORM_LINK#" class="btn red">Button Text »&lt;/a></code></pre>
 
-<!-- —————————— PASTE CONTENT —————————— -->
+<h3>Gray Button</h3>
+<a href="#ORDER_FORM_LINK#" class="btn gray">Start My Risk-Free<br>Trial Today »</a>
+<pre><code>&lt;a href="#ORDER_FORM_LINK#" class="btn gray">Button Text »&lt;/a></code></pre>
 
-<div class="text-center">
-<h3>Headings</h3>
-<h2 class="divider">This is an H2 With Color Background</h2>
-<h2>This is an H2 With No Background</h2>
-<h2 class="divider dark">This is an H2 With Dark Background</h2>
-<h3>This is an H3</h3>
-<h4>This is an H4</h4>
-<h5>This is an H5</h5>
-<h6>This is an H6</h6>
+<h3>Inline Buttons</h3>
+<div class="row">
+	<div class="col-md-6 mt-3 mb-3"><a class="btn" href="#ORDER_FORM_LINK#">Lock in 5 Years<br>of Adam O'Dell's<br><em>10X Profits</em> for 60% Off<br>the Regular Price!</a></div>
+	<div class="col-md-6 mt-3 mb-3"><a class="btn gray" href="#ORDER_FORM_LINK#">NO THANKS!<br>I'll Take The Risk And<br>Pass On This One-Time<br>Only Opportunity</a></div>
 </div>
+<pre><code>&lt;div class="row">
+	&lt;div class="col-md-6 mt-3 mb-3">&lt;a class="btn" href="#ORDER_FORM_LINK#">Button Text »&lt;/a>&lt;/a>&lt;/div>
+	&lt;div class="col-md-6 mt-3 mb-3">&lt;a class="btn gray" href="#ORDER_FORM_LINK#">Button Text »&lt;/a>&lt;/a>&lt;/div>
+&lt;/div></code></pre>
 
-<h3>Paragraphs</h3>
-<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat tellus at erat blandit aliquet. Etiam nec lectus at augue fringilla imperdiet.</p>
-<p>Lorem ipsum <strong>dolor sit amet</strong>, consectetur adipiscing elit. Quisque volutpat tellus at erat blandit aliquet. Etiam nec lectus at augue fringilla imperdiet. <u>Donec a pellentesque eros</u>. Donec vitae justo mauris. Nunc malesuada elementum purus maximus ullamcorper. <em>Cras ut condimentum nulla, vel lacinia lectus</em>. Nunc id volutpat arcu.</p>
-<p>Ut rhoncus arcu in <strong>ex maximus</strong>, sit amet tempus tortor feugiat. Sed aliquam, velit quis congue finibus, libero quam bibendum urna, ullamcorper hendrerit odio nibh nec nulla. Proin faucibus nunc luctus dui vehicula ultrices. <u>Sed in sem turpis</u>. Duis consequat vitae neque et molestie. Curabitur elementum, lectus vel hendrerit scelerisque, odio magna luctus quam, a congue est urna sit amet arcu. <em>Donec ac nunc condimentum, feugiat sapien sit amet, elementum tortor</em>. Quisque nulla diam, scelerisque eu massa vel, vehicula ullamcorper purus. Donec volutpat at elit ut mollis.</p>
 
-<h3>Image Floats</h3>
-<div class="float-img left large"><img src="http://via.placeholder.com/300x400"></div>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat tellus at erat blandit aliquet. Etiam nec lectus at augue fringilla imperdiet. Donec a pellentesque eros. Donec vitae justo mauris. Nunc malesuada elementum purus maximus ullamcorper. Cras ut condimentum nulla, vel lacinia lectus. Nunc id volutpat arcu.</p>
-<p>Ut rhoncus arcu in ex maximus, sit amet tempus tortor feugiat. Sed aliquam, velit quis congue finibus, libero quam bibendum urna, ullamcorper hendrerit odio nibh nec nulla. Proin faucibus nunc luctus dui vehicula ultrices. Sed in sem turpis. Duis consequat vitae neque et molestie. Curabitur elementum, lectus vel hendrerit scelerisque, odio magna luctus quam, a congue est urna sit amet arcu. Donec ac nunc condimentum, feugiat sapien sit amet, elementum tortor. Nunc malesuada elementum purus maximus ullamcorper. Quisque nulla diam, scelerisque eu massa vel, vehicula ullamcorper purus. Donec volutpat at elit ut mollis.</p>
-<div class="float-img right"><img src="http://via.placeholder.com/300x400"></div>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat tellus at erat blandit aliquet. Etiam nec lectus at augue fringilla imperdiet. Donec a pellentesque eros. Donec vitae justo mauris. Nunc malesuada elementum purus maximus ullamcorper. Cras ut condimentum nulla, vel lacinia lectus. Nunc id volutpat arcu.</p>
-<p>Ut rhoncus arcu in ex maximus, sit amet tempus tortor feugiat. Sed aliquam, velit quis congue finibus, libero quam bibendum urna, ullamcorper hendrerit odio nibh nec nulla. Proin faucibus nunc luctus dui vehicula ultrices. Sed in sem turpis. Duis consequat vitae neque et molestie. Curabitur elementum, lectus vel hendrerit scelerisque, odio magna luctus quam, a congue est urna sit amet arcu. Donec ac nunc condimentum, feugiat sapien sit amet, elementum tortor. Nunc malesuada elementum purus maximus ullamcorper. Quisque nulla diam, scelerisque eu massa vel, vehicula ullamcorper purus. Donec volutpat at elit ut mollis.</p>
-<div class="float-img left small"><img src="http://via.placeholder.com/300x400"></div>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat tellus at erat blandit aliquet. Etiam nec lectus at augue fringilla imperdiet. Donec a pellentesque eros. Donec vitae justo mauris. Nunc malesuada elementum purus maximus ullamcorper. Cras ut condimentum nulla, vel lacinia lectus. Nunc id volutpat arcu.</p>
-<p>Ut rhoncus arcu in ex maximus, sit amet tempus tortor feugiat. Sed aliquam, velit quis congue finibus, libero quam bibendum urna, ullamcorper hendrerit odio nibh nec nulla. Proin faucibus nunc luctus dui vehicula ultrices. Sed in sem turpis. Duis consequat vitae neque et molestie. Curabitur elementum, lectus vel hendrerit scelerisque, odio magna luctus quam, a congue est urna sit amet arcu. Donec ac nunc condimentum, feugiat sapien sit amet, elementum tortor. Nunc malesuada elementum purus maximus ullamcorper. Quisque nulla diam, scelerisque eu massa vel, vehicula ullamcorper purus. Donec volutpat at elit ut mollis.</p>
-<div class="float-img right large"><img src="http://via.placeholder.com/300x400"></div>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat tellus at erat blandit aliquet. Etiam nec lectus at augue fringilla imperdiet. Donec a pellentesque eros. Donec vitae justo mauris. Nunc malesuada elementum purus maximus ullamcorper. Cras ut condimentum nulla, vel lacinia lectus. Nunc id volutpat arcu.</p>
-<p>Ut rhoncus arcu in ex maximus, sit amet tempus tortor feugiat. Sed aliquam, velit quis congue finibus, libero quam bibendum urna, ullamcorper hendrerit odio nibh nec nulla. Proin faucibus nunc luctus dui vehicula ultrices. Sed in sem turpis. Duis consequat vitae neque et molestie. Curabitur elementum, lectus vel hendrerit scelerisque, odio magna luctus quam, a congue est urna sit amet arcu. Donec ac nunc condimentum, feugiat sapien sit amet, elementum tortor. Nunc malesuada elementum purus maximus ullamcorper. Quisque nulla diam, scelerisque eu massa vel, vehicula ullamcorper purus. Donec volutpat at elit ut mollis.</p>
-<div class="float-img left"><img src="http://via.placeholder.com/300x400"></div>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat tellus at erat blandit aliquet. Etiam nec lectus at augue fringilla imperdiet. Donec a pellentesque eros. Donec vitae justo mauris. Nunc malesuada elementum purus maximus ullamcorper. Cras ut condimentum nulla, vel lacinia lectus. Nunc id volutpat arcu.</p>
-<p>Ut rhoncus arcu in ex maximus, sit amet tempus tortor feugiat. Sed aliquam, velit quis congue finibus, libero quam bibendum urna, ullamcorper hendrerit odio nibh nec nulla. Proin faucibus nunc luctus dui vehicula ultrices. Sed in sem turpis. Duis consequat vitae neque et molestie. Curabitur elementum, lectus vel hendrerit scelerisque, odio magna luctus quam, a congue est urna sit amet arcu. Donec ac nunc condimentum, feugiat sapien sit amet, elementum tortor. Nunc malesuada elementum purus maximus ullamcorper. Quisque nulla diam, scelerisque eu massa vel, vehicula ullamcorper purus. Donec volutpat at elit ut mollis.</p>
-<div class="float-img right small"><img src="http://via.placeholder.com/300x400"></div>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat tellus at erat blandit aliquet. Etiam nec lectus at augue fringilla imperdiet. Donec a pellentesque eros. Donec vitae justo mauris. Nunc malesuada elementum purus maximus ullamcorper. Cras ut condimentum nulla, vel lacinia lectus. Nunc id volutpat arcu.</p>
-<p>Ut rhoncus arcu in ex maximus, sit amet tempus tortor feugiat. Sed aliquam, velit quis congue finibus, libero quam bibendum urna, ullamcorper hendrerit odio nibh nec nulla. Proin faucibus nunc luctus dui vehicula ultrices. Sed in sem turpis. Duis consequat vitae neque et molestie. Curabitur elementum, lectus vel hendrerit scelerisque, odio magna luctus quam, a congue est urna sit amet arcu. Donec ac nunc condimentum, feugiat sapien sit amet, elementum tortor. Quisque nulla diam, scelerisque eu massa vel, vehicula ullamcorper purus. Donec volutpat at elit ut mollis.</p>
 
-<h3 class="text-center">Unordered List</h3>
-<ul>
-	<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-	<li>Ut rhoncus arcu in ex maximus, sit amet tempus tortor feugiat.</li>
-	<li>Proin faucibus nunc luctus dui vehicula ultrices.</li>
-	<li>Donec volutpat at elit ut mollis.</li>
-</ul>
+<hr>
 
-<h3 class="text-center">Ordered List</h3>
-<ol class="large">
-	<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-	<li>Ut rhoncus arcu in ex maximus, sit amet tempus tortor feugiat.</li>
-	<li>Proin faucibus nunc luctus dui vehicula ultrices.</li>
-	<li>Donec volutpat at elit ut mollis.</li>
+
+
+<h2>Images</h2>
+<p>Documentation and examples for various image types.</p>
+
+<h3>Full Width Image</h3>
+<div class="full-img"><img src="https://via.placeholder.com/1000x500/e1e4e9/bac3d2?text=IMAGE" class="img-fluid"></div>
+<pre><code>&lt;div class="full-img">
+	&lt;img src="https://via.placeholder.com/1000x500/e1e4e9/bac3d2?text=IMAGE" class="img-fluid">
+&lt;/div></code></pre>
+
+<h3>Signature</h3>
+<p>Sincerely,</p>
+<p><img src="https://via.placeholder.com/200x100/e1e4e9/bac3d2?text=SIGNATURE" class="img-fluid"></p>
+<p>John Del Vecchio</p>
+<pre><code>&lt;p>&lt;img src="https://via.placeholder.com/200x100/e1e4e9/bac3d2?text=SIGNATURE" class="img-fluid">&lt;/p></code></pre>
+
+<h3>Float Image Right</h3>
+<div class="float right"><img src="https://via.placeholder.com/500x500/e1e4e9/bac3d2?text=IMAGE" class="img-fluid"></div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget nisi commodo, ullamcorper erat a, aliquam tortor. Nullam vel tortor nunc. Praesent mattis feugiat aliquet.</p>
+<p>Ut id tortor volutpat, tempus ipsum dapibus, mollis lacus. Aenean pretium, orci ac consequat convallis, leo nisl ultricies magna, eget mollis erat eros sed ligula. Sed venenatis est dui, vitae pharetra quam sollicitudin sed.</p>
+<p>Nunc magna elit, scelerisque ac facilisis id, accumsan eu justo. Integer pellentesque dui eu magna condimentum, in lobortis enim aliquam.</p>
+<pre><code>&lt;div class="float right">
+	&lt;img src="https://via.placeholder.com/500x500/e1e4e9/bac3d2?text=IMAGE" class="img-fluid">
+&lt;/div></code></pre>
+
+<h3>Float Image Left</h3>
+<div class="float left"><img src="https://via.placeholder.com/500x500/e1e4e9/bac3d2?text=IMAGE" class="img-fluid"></div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget nisi commodo, ullamcorper erat a, aliquam tortor. Nullam vel tortor nunc. Praesent mattis feugiat aliquet.</p>
+<p>Ut id tortor volutpat, tempus ipsum dapibus, mollis lacus. Aenean pretium, orci ac consequat convallis, leo nisl ultricies magna, eget mollis erat eros sed ligula. Sed venenatis est dui, vitae pharetra quam sollicitudin sed.</p>
+<p>Nunc magna elit, scelerisque ac facilisis id, accumsan eu justo. Integer pellentesque dui eu magna condimentum, in lobortis enim aliquam.</p>
+<pre><code>&lt;div class="float left">
+	&lt;img src="https://via.placeholder.com/500x500/e1e4e9/bac3d2?text=IMAGE" class="img-fluid">
+&lt;/div></code></pre>
+
+<h3>Large Float Image</h3>
+<div class="float right large"><img src="https://via.placeholder.com/500x400/e1e4e9/bac3d2?text=IMAGE" class="img-fluid"></div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget nisi commodo, ullamcorper erat a, aliquam tortor. Nullam vel tortor nunc. Praesent mattis feugiat aliquet.</p>
+<p>Ut id tortor volutpat, tempus ipsum dapibus, mollis lacus. Aenean pretium, orci ac consequat convallis, leo nisl ultricies magna, eget mollis erat eros sed ligula. Sed venenatis est dui, vitae pharetra quam sollicitudin sed.</p>
+<p>Nunc magna elit, scelerisque ac facilisis id, accumsan eu justo. Integer pellentesque dui eu magna condimentum, in lobortis enim aliquam.</p>
+<pre><code>&lt;div class="float right large">
+	&lt;img src="https://via.placeholder.com/500x400/e1e4e9/bac3d2?text=IMAGE" class="img-fluid">
+&lt;/div></code></pre>
+
+<h3>Small Float Image</h3>
+<div class="float right small"><img src="https://via.placeholder.com/400x500/e1e4e9/bac3d2?text=IMAGE" class="img-fluid"></div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget nisi commodo, ullamcorper erat a, aliquam tortor. Nullam vel tortor nunc. Praesent mattis feugiat aliquet.</p>
+<p>Ut id tortor volutpat, tempus ipsum dapibus, mollis lacus. Aenean pretium, orci ac consequat convallis, leo nisl ultricies magna, eget mollis erat eros sed ligula. Sed venenatis est dui, vitae pharetra quam sollicitudin sed.</p>
+<p>Nunc magna elit, scelerisque ac facilisis id, accumsan eu justo. Integer pellentesque dui eu magna condimentum, in lobortis enim aliquam.</p>
+<pre><code>&lt;div class="float right small">
+	&lt;img src="https://via.placeholder.com/400x500/e1e4e9/bac3d2?text=IMAGE" class="img-fluid">
+&lt;/div></code></pre>
+
+<h3>Float Image With Caption</h3>
+<div class="float right">
+	<img src="https://via.placeholder.com/500x500/e1e4e9/bac3d2?text=IMAGE" class="img-fluid">
+	<span class="caption">Example of a Caption</span>
+</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget nisi commodo, ullamcorper erat a, aliquam tortor. Nullam vel tortor nunc. Praesent mattis feugiat aliquet.</p>
+<p>Ut id tortor volutpat, tempus ipsum dapibus, mollis lacus. Aenean pretium, orci ac consequat convallis, leo nisl ultricies magna, eget mollis erat eros sed ligula. Sed venenatis est dui, vitae pharetra quam sollicitudin sed.</p>
+<p>Nunc magna elit, scelerisque ac facilisis id, accumsan eu justo. Integer pellentesque dui eu magna condimentum, in lobortis enim aliquam.</p>
+<pre><code>&lt;div class="float right">
+	&lt;img src="https://via.placeholder.com/500x500/e1e4e9/bac3d2?text=IMAGE" class="img-fluid">
+	&lt;span class="caption">Example of a Caption&lt;/span>
+&lt;/div></code></pre>
+
+
+
+<hr>
+
+
+
+<h2>Lists</h2>
+<p>Documentation and examples for various list types.</p>
+
+<h3>Default Ordered List</h3>
+<ol>
+	<li>List Item</li>
+	<li>List Item</li>
+	<li>List Item</li>
 </ol>
+<pre><code>&lt;ol>
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+&lt;/ol></code></pre>
 
-<h3 class="text-center">Check List</h3>
-<ul class="check large">
-	<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-	<li>Ut rhoncus arcu in ex maximus, sit amet tempus tortor feugiat.</li>
-	<li>Proin faucibus nunc luctus dui vehicula ultrices.</li>
-	<li>Donec volutpat at elit ut mollis.</li>
+<h3>Default Unordered List</h3>
+<ul>
+	<li>List Item</li>
+	<li>List Item</li>
+	<li>List Item</li>
 </ul>
+<pre><code>&lt;ul>
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+&lt;/ul></code></pre>
 
-<h3 class="text-center">Dash List</h3>
-<ul class="dash large">
-	<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-	<li>Ut rhoncus arcu in ex maximus, sit amet tempus tortor feugiat.</li>
-	<li>Proin faucibus nunc luctus dui vehicula ultrices.</li>
-	<li>Donec volutpat at elit ut mollis.</li>
+<h3>Large List</h3>
+<ul class="large">
+	<li>List Item</li>
+	<li>List Item</li>
+	<li>List Item</li>
 </ul>
+<pre><code>&lt;ul class="large">
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+&lt;/ul></code></pre>
 
-<h3 class="text-center">Border Left List</h3>
-<ul class="indent">
-	<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat tellus at erat blandit aliquet. Etiam nec lectus at augue fringilla imperdiet. Donec a pellentesque eros. Donec vitae justo mauris. Nunc malesuada elementum purus maximus ullamcorper. Cras ut condimentum nulla, vel lacinia lectus. Nunc id volutpat arcu.</li>
-	<li>Ut rhoncus arcu in ex maximus, sit amet tempus tortor feugiat. Sed aliquam, velit quis congue finibus, libero quam bibendum urna, ullamcorper hendrerit odio nibh nec nulla. Proin faucibus nunc luctus dui vehicula ultrices. Sed in sem turpis. Duis consequat vitae neque et molestie. Curabitur elementum, lectus vel hendrerit scelerisque, odio magna luctus quam, a congue est urna sit amet arcu. Donec ac nunc condimentum, feugiat sapien sit amet, elementum tortor. Quisque nulla diam, scelerisque eu massa vel, vehicula ullamcorper purus. Donec volutpat at elit ut mollis.</li>
+<h3>Thin List</h3>
+<ul class="thin">
+	<li>List Item</li>
+	<li>List Item</li>
+	<li>List Item</li>
 </ul>
+<pre><code>&lt;ul class="thin">
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+&lt;/ul></code></pre>
 
-<h3 class="text-center">Paragraph Links</h3>
-<p class="text-center"><a class="dotted" href="#">Link with Dotted Underline</a></p>
-<p class="text-center"><a class="highlight" href="#">Link with Highlight</a></p>
-<p class="text-center"><a href="#">Normal Link with Color</a></p>
+<h3>Square Numbers</h3>
+<ol class="square">
+	<li>List Item</li>
+	<li>List Item</li>
+	<li>List Item</li>
+</ol>
+<pre><code>&lt;ol class="square">
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+&lt;/ol></code></pre>
 
-<h3 class="text-center">Buttons</h3>
-<div class="btn-container"><a class="btn" href="#">Call To Action</a></div>
-<div class="btn-container"><a class="btn arrow-move" href="#">Call To Action</a></div>
-<div class="btn-container d-flex justify-content-center align-items-center">
-	<img class="left" src="http://i66.tinypic.com/qs70ja.png">
-	<a class="btn" href="#">Call To Action</a>
-	<img class="right" src="http://i65.tinypic.com/2elbk2r.png">
+<h3>Square Bullets (Default)</h3>
+<ul>
+	<li>List Item</li>
+	<li>List Item</li>
+	<li>List Item</li>
+</ul>
+<pre><code>&lt;ul>
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+&lt;/ul></code></pre>
+
+<h3>Circular Bullets</h3>
+<ul class="circle">
+	<li>List Item</li>
+	<li>List Item</li>
+	<li>List Item</li>
+</ul>
+<pre><code>&lt;ul class="circle">
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+&lt;/ul></code></pre>
+
+<h3>Check Mark Bullets</h3>
+<ul class="check">
+	<li>List Item</li>
+	<li>List Item</li>
+	<li>List Item</li>
+</ul>
+<pre><code>&lt;ul class="check">
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+&lt;/ul></code></pre>
+
+<h3>Green Check Mark Bullets</h3>
+<ul class="check green">
+	<li>List Item</li>
+	<li>List Item</li>
+	<li>List Item</li>
+</ul>
+<pre><code>&lt;ul class="check green">
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+&lt;/ul></code></pre>
+
+<h3>X Bullets</h3>
+<ul class="x">
+	<li>List Item</li>
+	<li>List Item</li>
+	<li>List Item</li>
+</ul>
+<pre><code>&lt;ul class="x">
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+&lt;/ul></code></pre>
+
+<h3>Red X Bullets</h3>
+<ul class="x red">
+	<li>List Item</li>
+	<li>List Item</li>
+	<li>List Item</li>
+</ul>
+<pre><code>&lt;ul class="x red">
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+&lt;/ul></code></pre>
+
+<h3>Arrow Bullets</h3>
+<ul class="arrow">
+	<li>List Item</li>
+	<li>List Item</li>
+	<li>List Item</li>
+</ul>
+<pre><code>&lt;ul class="arrow">
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+	&lt;li>List Item&lt;/li>
+&lt;/ul></code></pre>
+
+
+
+<hr>
+
+
+
+<h2>Tables</h2>
+<p>Documentation and examples for Bootstrap tables.</p>
+<h3>Table With Title</h3>
+<div class="full-img">
+	<table class="table table-striped">
+		<thead class="thead-dark text-center">
+			<tr>
+				<th class="border-0" colspan="3">Large Cap Stocks have the WORST return</th>
+			</tr>
+		</thead>
+		<thead>
+			<tr>
+				<th class="border-0" scope="col">FAST Test</th>
+				<th class="border-0 " scope="col">Grade</th>
+				<th class="border-0" scope="col">Outlook</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">Earnings</th>
+				<td>A-</td>
+				<td>Earnings have been improving in recent quarters and are moving in the right direction</td>
+			</tr>
+			<tr>
+				<th scope="row">Expectations</th>
+				<td>A+</td>
+				<td>Expectations are low on Wall Street... making this a classic “buy low, sell high” opportunity</td>
+			</tr>
+			<tr>
+				<th scope="row">Revenue</th>
+				<td>C</td>
+				<td>Revenue has been spotty as the company has shifted from a product-based business to a software provider. But it’s already rising rapidly. If they succeed at becoming “the Microsoft of the car industry”, this is what will help the stock soar and possibly lead to a takeover.</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
+<pre><code>&lt;div class="full-img">
+	&lt;table class="table table-striped">
+		&lt;thead class="thead-dark text-center">
+			&lt;tr>
+				&lt;th class="border-0" colspan="3">Large Cap Stocks have the WORST return&lt;/th>
+			&lt;/tr>
+		&lt;/thead>
+		&lt;thead>
+			&lt;tr>
+				&lt;th class="border-0" scope="col">[Text]&lt;/th>
+				&lt;th class="border-0" scope="col">[Text]&lt;/th>
+				&lt;th class="border-0" scope="col">[Text]&lt;/th>
+			&lt;/tr>
+		&lt;/thead>
+		&lt;tbody>
+			&lt;tr>
+				&lt;th scope="row">[Text]&lt;/th>
+				&lt;td>[Text]&lt;/td>
+				&lt;td>[Text]&lt;/td>
+			&lt;/tr>
+		&lt;/tbody>
+	&lt;/table>
+&lt;/div></code></pre>
 
-<h3 class="text-center">Full Width Images (Charts, Tearouts, Etc.)</h3>
-<div class="full-img"><img src="http://via.placeholder.com/1000x600"></div>
-
-<h3 class="text-center">Callout With Image</h3>
-<div class="callout image">
-	<div class="row m-0 d-flex align-items-center">
-		<div class="text col order-12 order-md-1">
-			<h6>Lorem ipsum dolor</h6>
-			<h4>Consectetur adipiscing elit quisque volutpat tellus.</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat tellus at erat blandit aliquet.</p>
-			<a class="btn" href="#">Call To Action</a>
-		</div>
-		<div class="callout-img col-12 col-md-3 p-0 order-1 order-md-12"><img src="http://via.placeholder.com/300x400"></div>
-	</div>
+<h3>Table Without Title (Labels Only)</h3>
+<div class="full-img">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th class="border-0" scope="col">FAST Test</th>
+				<th class="border-0" scope="col">Grade</th>
+				<th class="border-0" scope="col">Outlook</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">Earnings</th>
+				<td>A-</td>
+				<td>Earnings have been improving in recent quarters and are moving in the right direction</td>
+			</tr>
+			<tr>
+				<th scope="row">Expectations</th>
+				<td>A+</td>
+				<td>Expectations are low on Wall Street... making this a classic “buy low, sell high” opportunity</td>
+			</tr>
+			<tr>
+				<th scope="row">Revenue</th>
+				<td>C</td>
+				<td>Revenue has been spotty as the company has shifted from a product-based business to a software provider. But it’s already rising rapidly. If they succeed at becoming “the Microsoft of the car industry”, this is what will help the stock soar and possibly lead to a takeover.</td>
+			</tr>
+			</tr>
+		</tbody>
+	</table>
 </div>
+<pre><code>&lt;div class="full-img">
+	&lt;table class="table table-striped">
+		&lt;thead>
+			&lt;tr>
+				&lt;th class="border-0" scope="col">[Text]&lt;/th>
+				&lt;th class="border-0" scope="col">[Text]&lt;/th>
+				&lt;th class="border-0" scope="col">[Text]&lt;/th>
+			&lt;/tr>
+		&lt;/thead>
+		&lt;tbody>
+			&lt;tr>
+				&lt;th scope="row">[Text]&lt;/th>
+				&lt;td>[Text]&lt;/td>
+				&lt;td>[Text]&lt;/td>
+			&lt;/tr>
+		&lt;/tbody>
+	&lt;/table>
+&lt;/div></code></pre>
 
-<h3 class="text-center">Callout Without Image</h3>
-<div class="callout">
-	<h6>Lorem ipsum dolor</h6>
-	<h4>Consectetur adipiscing elit quisque volutpat tellus.</h4>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat tellus at.</p>
-	<a class="btn arrow-move" href="#">Call To Action</a>
+
+<h3>Circled Element</h3>
+<div class="full-img">
+	<table class="table table-striped">
+		<thead class="thead-dark text-center">
+			<tr>
+				<th class="border-0" colspan="3">Large Caps vs. Small Cap Stocks</th>
+			</tr>
+		</thead>
+		<thead>
+			<tr>
+				<th class="border-0" scope="col">Market Capitalization</th>
+				<th class="border-0 text-center" scope="col">Annualized Return</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">Largest Stocks</th>
+				<td class="text-center">9.6%</td>
+			</tr>
+			<tr>
+				<th scope="row">5th Largest Stocks</th>
+				<td class="text-center">11.7%</td>
+			</tr>
+			<tr>
+				<th scope="row">Smallest Stocks</th>
+				<td class="text-center"><strong><span class="circle">14%</span></strong></td>
+			</tr>
+		</tbody>
+	</table>
 </div>
+<pre><code>&lt;span class="circle">[Text]&lt;/span></code></pre>
 
-<h3 class="text-center">Callout Dark</h3>
-<div class="callout dark image">
-	<div class="row m-0 d-flex align-items-center">
-		<div class="text col order-12 order-md-1">
-			<h6>Lorem ipsum dolor</h6>
-			<h4>Consectetur adipiscing elit quisque volutpat tellus.</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat tellus at erat blandit aliquet.</p>
-			<a class="btn" href="#">Call To Action</a>
-		</div>
-		<div class="callout-img col-12 col-md-3 p-0 order-1 order-md-12"><img src="http://via.placeholder.com/300x400"></div>
-	</div>
-</div>
 
-<h3 class="text-center">Testimonials Style 1</h3>
-<ul class="testimonials style1">
-	<li>
-		<div class="row m-0">
-			<div class="headshot col-12 col-md-3 col-lg-2"><img src="http://via.placeholder.com/500x500"></div>
-			<div class="text col">
-				<p class="lead">“Dent Research gives me thoughtful insights that allow me to capitalize on what the market is doing, instead of being left for dead on the sidelines, like "a deer in the headlights" of an insane, difficult to trade and profit reasonably market.”<span>– Rick F.</span></p>
+
+<hr>
+
+
+
+<h2>Quotes</h2>
+<p>Documentation and examples for various quote types.</p>
+<h3>Emails</h3>
+<div class="email-snippet row">
+	<div class="col-12">
+		<div class="email">
+			<div class="email-head clearfix">
+				<div class="head-content row m-0">
+					<div class="col-6 p-0 text-left">
+						<i class="fa fa-chevron-left" aria-hidden="true"></i>
+						<i class="fa fa-chevron-right" aria-hidden="true"></i>
+						<i class="fa fa-refresh" aria-hidden="true"></i>
+					</div>
+					<div class="col-6 p-0 text-right">
+						<i class="fa fa-folder-o" aria-hidden="true"></i>
+						<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+						<i class="fa fa-smile-o" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+			<div class="email-content clearfix">
+				<div class="from">J.C. Parets</div>
+				<div class="meta"><strong>Subject:</strong> ALERT</div>
+				<div class="email-text">Another group emerging as a new leader is <strong>Aerospace and Defense</strong>. I don’t like these stocks because Donald Trump is the President of the United States. <u>I like these stocks because they are in uptrends</u>. We want to be long this sector and within the group, Boeing looks good.</div>
 			</div>
 		</div>
-	</li>
-	<li>
-		<div class="row m-0">
-			<div class="headshot col-12 col-md-3 col-lg-2"><img src="http://via.placeholder.com/500x500"></div>
-			<div class="text col">
-				<p class="lead">“Dent Research gives me thoughtful insights that allow me to capitalize on what the market is doing, instead of being left for dead on the sidelines, like "a deer in the headlights" of an insane, difficult to trade and profit reasonably market.”<span>– Rick F.</span></p>
+	</div>
+</div>
+<pre><code>&lt;div class="email-snippet row">
+	&lt;div class="col-12">
+		&lt;div class="email">
+			&lt;div class="email-head clearfix">
+				&lt;div class="head-content row m-0">
+					&lt;div class="col-6 p-0 text-left">
+						&lt;i class="fa fa-chevron-left" aria-hidden="true">&lt;/i>
+						&lt;i class="fa fa-chevron-right" aria-hidden="true">&lt;/i>
+						&lt;i class="fa fa-refresh" aria-hidden="true">&lt;/i>
+					&lt;/div>
+					&lt;div class="col-6 p-0 text-right">
+						&lt;i class="fa fa-folder-o" aria-hidden="true">&lt;/i>
+						&lt;i class="fa fa-pencil-square-o" aria-hidden="true">&lt;/i>
+						&lt;i class="fa fa-smile-o" aria-hidden="true">&lt;/i>
+					&lt;/div>
+				&lt;/div>
+			&lt;/div>
+			&lt;div class="email-content clearfix">
+				&lt;div class="from">J.C. Parets&lt;/div>
+				&lt;div class="meta">&lt;strong>Subject:&lt;/strong> ALERT&lt;/div>
+				&lt;div class="email-text">Another group emerging as a new leader is &lt;strong>Aerospace and Defense&lt;/strong>. I don’t like these stocks because Donald Trump is the President of the United States. &lt;u>I like these stocks because they are in uptrends&lt;/u>. We want to be long this sector and within the group, Boeing looks good.&lt;/div>
+			&lt;/div>
+		&lt;/div>
+	&lt;/div>
+&lt;/div></code></pre>
+
+<h3>Emails (2 Columns)</h3>
+<div class="email-snippet row">
+	<div class="col-md-6">
+		<div class="email">
+			<div class="email-head clearfix">
+				<div class="head-content row m-0">
+					<div class="col-6 p-0 text-left">
+						<i class="fa fa-chevron-left" aria-hidden="true"></i>
+						<i class="fa fa-chevron-right" aria-hidden="true"></i>
+						<i class="fa fa-refresh" aria-hidden="true"></i>
+					</div>
+					<div class="col-6 p-0 text-right">
+						<i class="fa fa-folder-o" aria-hidden="true"></i>
+						<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+						<i class="fa fa-smile-o" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+			<div class="email-content clearfix">
+				<div class="from">J.C. Parets</div>
+				<div class="meta"><strong>Subject:</strong> ALERT</div>
+				<div class="email-text">Another group emerging as a new leader is <strong>Aerospace and Defense</strong>. I don’t like these stocks because Donald Trump is the President of the United States. <u>I like these stocks because they are in uptrends</u>. We want to be long this sector and within the group, Boeing looks good.</div>
 			</div>
 		</div>
-	</li>
-
-</ul>
-
-<h3 class="text-center">Testimonials Style 2 (No Image)</h3>
-<ul class="testimonials style2">
-	<li>
-		<div class="text">
-			<p class="lead">“Dent Research gives me thoughtful insights that allow me to capitalize on what the market is doing, instead of being left for dead on the sidelines, like "a deer in the headlights" of an insane, difficult to trade and profit reasonably market.”<span>– Rick F.</span></p>
-		</div>
-	</li>
-	<li>
-		<div class="text">
-			<p class="lead">“Dent Research gives me thoughtful insights that allow me to capitalize on what the market is doing, instead of being left for dead on the sidelines, like "a deer in the headlights" of an insane, difficult to trade and profit reasonably market.”<span>– Rick F.</span></p>
-		</div>
-	</li>
-</ul>
-
-<h3 class="text-center">Guarantee With Image</h3>
-<div class="guarantee image">
-	<h5>Boom &amp; Bust Guarantee</h5>
-	<div class="row m-0">
-		<div class="headshot col-4 col-lg-3 p-0"><img src="https://14west.box.com/shared/static/zk913ot0j6m4k9wyixdgio1j50bcrh89.jpg"></div>
-		<div class="text col">
-			<p class="lead">You have a full 30 days to decide if <strong><em>Boom &amp; Bust</em></strong> is right for you. If at any time during that 30-day period you decide our work isn't right for you – simply let us know and I'll see to it that you receive a full, prompt, and courteous refund. After your 30 days have ended, you are still entitles to a refund on the unused portion of your subscription.</p>
+	</div>
+	<div class="col-md-6">
+		<div class="email">
+			<div class="email-head clearfix">
+				<div class="head-content row m-0">
+					<div class="col-6 p-0 text-left">
+						<i class="fa fa-chevron-left" aria-hidden="true"></i>
+						<i class="fa fa-chevron-right" aria-hidden="true"></i>
+						<i class="fa fa-refresh" aria-hidden="true"></i>
+					</div>
+					<div class="col-6 p-0 text-right">
+						<i class="fa fa-folder-o" aria-hidden="true"></i>
+						<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+						<i class="fa fa-smile-o" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+			<div class="email-content clearfix">
+				<div class="from">J.C. Parets</div>
+				<div class="meta"><strong>Subject:</strong> ALERT</div>
+				<div class="email-text">Another group emerging as a new leader is <strong>Aerospace and Defense</strong>. I don’t like these stocks because Donald Trump is the President of the United States. <u>I like these stocks because they are in uptrends</u>. We want to be long this sector and within the group, Boeing looks good.</div>
+			</div>
 		</div>
 	</div>
 </div>
+<pre><code>&lt;div class="email-snippet row">
+	&lt;div class="col-md-6">
+		&lt;div class="email">
+			&lt;div class="email-head clearfix">
+				&lt;div class="head-content row m-0">
+					&lt;div class="col-6 p-0 text-left">
+						&lt;i class="fa fa-chevron-left" aria-hidden="true">&lt;/i>
+						&lt;i class="fa fa-chevron-right" aria-hidden="true">&lt;/i>
+						&lt;i class="fa fa-refresh" aria-hidden="true">&lt;/i>
+					&lt;/div>
+					&lt;div class="col-6 p-0 text-right">
+						&lt;i class="fa fa-folder-o" aria-hidden="true">&lt;/i>
+						&lt;i class="fa fa-pencil-square-o" aria-hidden="true">&lt;/i>
+						&lt;i class="fa fa-smile-o" aria-hidden="true">&lt;/i>
+					&lt;/div>
+				&lt;/div>
+			&lt;/div>
+			&lt;div class="email-content clearfix">
+				&lt;div class="from">J.C. Parets&lt;/div>
+				&lt;div class="meta">&lt;strong>Subject:&lt;/strong> ALERT&lt;/div>
+				&lt;div class="email-text">Another group emerging as a new leader is &lt;strong>Aerospace and Defense&lt;/strong>. I don’t like these stocks because Donald Trump is the President of the United States. &lt;u>I like these stocks because they are in uptrends&lt;/u>. We want to be long this sector and within the group, Boeing looks good.&lt;/div>
+			&lt;/div>
+		&lt;/div>
+	&lt;/div>
+	&lt;div class="col-md-6">
+		&lt;div class="email">
+			&lt;div class="email-head clearfix">
+				&lt;div class="head-content row m-0">
+					&lt;div class="col-6 p-0 text-left">
+						&lt;i class="fa fa-chevron-left" aria-hidden="true">&lt;/i>
+						&lt;i class="fa fa-chevron-right" aria-hidden="true">&lt;/i>
+						&lt;i class="fa fa-refresh" aria-hidden="true">&lt;/i>
+					&lt;/div>
+					&lt;div class="col-6 p-0 text-right">
+						&lt;i class="fa fa-folder-o" aria-hidden="true">&lt;/i>
+						&lt;i class="fa fa-pencil-square-o" aria-hidden="true">&lt;/i>
+						&lt;i class="fa fa-smile-o" aria-hidden="true">&lt;/i>
+					&lt;/div>
+				&lt;/div>
+			&lt;/div>
+			&lt;div class="email-content clearfix">
+				&lt;div class="from">J.C. Parets&lt;/div>
+				&lt;div class="meta">&lt;strong>Subject:&lt;/strong> ALERT&lt;/div>
+				&lt;div class="email-text">Another group emerging as a new leader is &lt;strong>Aerospace and Defense&lt;/strong>. I don’t like these stocks because Donald Trump is the President of the United States. &lt;u>I like these stocks because they are in uptrends&lt;/u>. We want to be long this sector and within the group, Boeing looks good.&lt;/div>
+			&lt;/div>
+		&lt;/div>
+	&lt;/div>
+&lt;/div></code></pre>
 
-<h3 class="text-center">Guarantee Without Image</h3>
+<h3>Tweet</h3>
+<div class="twitter row">
+	<div class="col-12">
+		<div class="tweet">
+			<div class="tweet-head clearfix">
+				<img src="https://csresearch.s3.amazonaws.com/JCF/2019/Promos/OffTheCharts/nataleeroan.jpg" class="img-fluid">
+				<div class="head-content">
+					<div class="name">Natalee Roan</div>
+					<div class="username">@NataleeRoan</div>
+				</div>
+			</div>
+			<div class="replying-to">Replying to @allstarcharts</div>
+			<div class="tweet-text">You really saved my retirement portfolio JC!  I'm sleeping so well - Thank you!</div>
+			<div class="meta">4:03 PM - Oct 24, 2018</div>
+		</div>
+	</div>
+</div>
+<pre><code>&lt;div class="twitter row">
+	&lt;div class="col-12">
+		&lt;div class="tweet">
+			&lt;div class="tweet-head clearfix">
+				&lt;img src="https://csresearch.s3.amazonaws.com/JCF/2019/Promos/OffTheCharts/nataleeroan.jpg" class="img-fluid">
+				&lt;div class="head-content">
+					&lt;div class="name">Natalee Roan&lt;/div>
+					&lt;div class="username">@NataleeRoan&lt;/div>
+				&lt;/div>
+			&lt;/div>
+			&lt;div class="replying-to">Replying to @allstarcharts&lt;/div>
+			&lt;div class="tweet-text">You really saved my retirement portfolio JC!  I'm sleeping so well - Thank you!&lt;/div>
+			&lt;div class="meta">4:03 PM - Oct 24, 2018&lt;/div>
+		&lt;/div>
+	&lt;/div>
+&lt;/div></code></pre>
+
+<h3>Tweet (2 Columns)</h3>
+<div class="twitter row">
+	<div class="col-md-6">
+		<div class="tweet">
+			<div class="tweet-head clearfix">
+				<img src="https://csresearch.s3.amazonaws.com/JCF/2019/Promos/OffTheCharts/nataleeroan.jpg" class="img-fluid">
+				<div class="head-content">
+					<div class="name">Natalee Roan</div>
+					<div class="username">@NataleeRoan</div>
+				</div>
+			</div>
+			<div class="replying-to">Replying to @allstarcharts</div>
+			<div class="tweet-text">You really saved my retirement portfolio JC!  I'm sleeping so well - Thank you!</div>
+			<div class="meta">4:03 PM - Oct 24, 2018</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="tweet">
+			<div class="tweet-head clearfix">
+				<img src="https://csresearch.s3.amazonaws.com/JCF/2019/Promos/OffTheCharts/kenr0966.jpg" class="img-fluid">
+				<div class="head-content">
+					<div class="name">kenr0966</div>
+					<div class="username">@kenr0966</div>
+				</div>
+			</div>
+			<div class="replying-to">Replying to @allstarcharts</div>
+			<div class="tweet-text">Thank you I put my 401k in money mkt and bonds 3 weeks ago along with my wife u r talking 345k u prob saved me 34 grand wow 10% drop wow I lusten to your show everyday I listen to u</div>
+			<div class="meta">2:05 PM - Oct 24, 2018</div>
+		</div>
+	</div>
+</div>
+<pre><code>&lt;div class="twitter row">
+	&lt;div class="col-md-6">
+		&lt;div class="tweet">
+			&lt;div class="tweet-head clearfix">
+				&lt;img src="https://csresearch.s3.amazonaws.com/JCF/2019/Promos/OffTheCharts/nataleeroan.jpg" class="img-fluid">
+				&lt;div class="head-content">
+					&lt;div class="name">Natalee Roan&lt;/div>
+					&lt;div class="username">@NataleeRoan&lt;/div>
+				&lt;/div>
+			&lt;/div>
+			&lt;div class="replying-to">Replying to @allstarcharts&lt;/div>
+			&lt;div class="tweet-text">You really saved my retirement portfolio JC!  I'm sleeping so well - Thank you!&lt;/div>
+			&lt;div class="meta">4:03 PM - Oct 24, 2018&lt;/div>
+		&lt;/div>
+	&lt;/div>
+	&lt;div class="col-md-6">
+		&lt;div class="tweet">
+			&lt;div class="tweet-head clearfix">
+				&lt;img src="https://csresearch.s3.amazonaws.com/JCF/2019/Promos/OffTheCharts/kenr0966.jpg" class="img-fluid">
+				&lt;div class="head-content">
+					&lt;div class="name">kenr0966&lt;/div>
+					&lt;div class="username">@kenr0966&lt;/div>
+				&lt;/div>
+			&lt;/div>
+			&lt;div class="replying-to">Replying to @allstarcharts&lt;/div>
+			&lt;div class="tweet-text">Thank you I put my 401k in money mkt and bonds 3 weeks ago along with my wife u r talking 345k u prob saved me 34 grand wow 10% drop wow I lusten to your show everyday I listen to u&lt;/div>
+			&lt;div class="meta">2:05 PM - Oct 24, 2018&lt;/div>
+		&lt;/div>
+	&lt;/div>
+&lt;/div></code></pre>
+
+
+
+<hr>
+
+
+
+<h2>Misc</h2>
+<p>Documentation and examples for various miscellaneous items.</p>
+
+<h3>Automatic Month Change</h3>
+<p>Sincerely,</p>
+<p><img src="https://csresearch.s3.amazonaws.com/JCF/2019/Promos/OffTheCharts/JCSig.png" class="img-fluid"></p>
+<p>J.C. Parets<br><span id="spanDate"></span></p>
+<p><strong>HTML:</strong></p>
+<pre class="mt-0"><code>&lt;span id="spanDate">&lt;/span></code></pre>
+<p><strong>JavaScript:</strong></p>
+<pre class="mt-0"><code>&lt;!-- —————————— THIS MONTH + THIS YEAR —————————— -->
+&lt;script type="text/javascript">
+	var months = ['January','February','March','April','May','June','July',
+	'August','September','October','November','December'];       
+	var tomorrow = new Date();
+	tomorrow.setTime(tomorrow.getTime() + (1000*3600*24));       
+	document.getElementById("spanDate").innerHTML = months[tomorrow.getMonth()] + " " + tomorrow.getFullYear();
+&lt;/script>
+&lt;!-- —————————— END THIS MONTH + THIS YEAR —————————— --></code></pre>
+
+<h3>Responsive Guarantees</h3>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap');
+.guarantee {
+    max-width: 620px;
+    margin: 40px auto 30px;
+    background: #f6f6f6;
+    border-bottom: 6px solid #1e1e1e;
+    padding-bottom: 10px;
+}
+.header.row {
+    background: #1e1e1e;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 22px;
+    color: #fff;
+    text-transform: uppercase;
+	margin-bottom: 15px!important;
+}
+.col.gbadge {
+    max-width: 130px;
+    padding-left: 16px;
+    margin-top: -25px;
+    margin-bottom: -25px;
+    padding-right: 0;
+}
+.col.gheadshot {
+    max-width: 156px;
+    padding: 5px;
+    background: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 5px 15px -5px rgba(0,0,0,0.5);
+}
+.gheadshot img {
+    margin-bottom: 5px;
+}
+.gcontent p {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #1e1e1e;
+	padding-right: 15px;
+}
+@media screen and (max-width:767px) {
+.guarantee {
+    max-width: 520px;
+    padding-bottom: 5px;
+}
+.header.row {
+    font-size: 20px;
+    margin-bottom: 10px!important;
+}
+.col.gbadge {
+    max-width: 105px;
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+.gcontent p {
+    font-size: 16px;
+    padding-right: 10px;
+    margin-left: -10px;
+}
+.col.gheadshot {
+    font-size: 15px;
+}
+}
+@media screen and (max-width: 575px) {
+.col.gheadshot {
+    display: none;
+}
+.gcontent p {
+    font-size: 18px;
+    padding-right: 5px;
+    margin-left: 0;
+    padding-left: 5px;
+}
+.header.row {
+    font-size: 18px;
+    margin-bottom: 10px!important;
+    line-height: 1.1;
+}
+.col.gbadge {
+    max-width: 120px;
+}
+.guarantee {
+    max-width: 100%;
+    width: 100%;
+}
+}
+</style>
 <div class="guarantee">
-	<div class="row m-0">
-	<h5 class="col-12 col-md-4 col-lg-3 mb-2 mb-md-0">Boom &amp; Bust Guarantee</h5>
-		<div class="text col">
-			<p class="lead">You have a full 30 days to decide if <strong><em>Boom &amp; Bust</em></strong> is right for you. If at any time during that 30-day period you decide our work isn't right for you – simply let us know and I'll see to it that you receive a full, prompt, and courteous refund. After your 30 days have ended, you are still entitles to a refund on the unused portion of your subscription.</p>
+	<div class="header row m-0">
+		<div class="col gbadge"><img class="img-fluid" src="https://csresearch.s3.amazonaws.com/PEA/2019/promos/1201K/GuaranteeBadge.png"></div>
+		<div class="col d-flex align-items-center">Risk-free • 100% Money Back Guarantee</div>
+	</div>
+	<div class="gcontent row m-0">
+		<div class="col gheadshot m-3">
+			<img class="img-fluid" src="https://csresearch.s3.amazonaws.com/PEA/2019/promos/1201K/CharlesHeadshotNEW.jpg">
+			Charles Sizemore
 		</div>
+		<div class="col d-flex align-items-center"><p>You get a full 30 days to test-drive <em><strong>Peak Income</strong></em> to see what it can do for you. If at any time during those 30 days you’re not 100% satisfied that <em><strong>Peak Income</strong></em> is perfect for you, no worries. You’re entitled to a complete and full refund of your money. Any time after 30 days, you can receive a pro-rated refund. No quibbles, no questions, no problems.</p></div>
 	</div>
 </div>
+<p><strong>Peak Income:</strong></p>
+<pre class="mt-0"><code>&lt;style>
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap');
+.guarantee {
+    max-width: 620px;
+    margin: 40px auto 30px;
+    background: #f6f6f6;
+    border-bottom: 6px solid #1e1e1e;
+    padding-bottom: 10px;
+}
+.header.row {
+    background: #1e1e1e;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 22px;
+    color: #fff;
+    text-transform: uppercase;
+	margin-bottom: 15px!important;
+}
+.col.gbadge {
+    max-width: 130px;
+    padding-left: 16px;
+    margin-top: -25px;
+    margin-bottom: -25px;
+    padding-right: 0;
+}
+.col.gheadshot {
+    max-width: 156px;
+    padding: 5px;
+    background: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 5px 15px -5px rgba(0,0,0,0.5);
+}
+.gheadshot img {
+    margin-bottom: 5px;
+}
+.gcontent p {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #1e1e1e;
+	padding-right: 15px;
+}
+@media screen and (max-width:767px) {
+.guarantee {
+    max-width: 520px;
+    padding-bottom: 5px;
+}
+.header.row {
+    font-size: 20px;
+    margin-bottom: 10px!important;
+}
+.col.gbadge {
+    max-width: 105px;
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+.gcontent p {
+    font-size: 16px;
+    padding-right: 10px;
+    margin-left: -10px;
+}
+.col.gheadshot {
+    font-size: 15px;
+}
+}
+@media screen and (max-width: 575px) {
+.col.gheadshot {
+    display: none;
+}
+.gcontent p {
+    font-size: 18px;
+    padding-right: 5px;
+    margin-left: 0;
+    padding-left: 5px;
+}
+.header.row {
+    font-size: 18px;
+    margin-bottom: 10px!important;
+    line-height: 1.1;
+}
+.col.gbadge {
+    max-width: 120px;
+}
+.guarantee {
+    max-width: 100%;
+    width: 100%;
+}
+}
+&lt;/style>
+&lt;div class="guarantee">
+	&lt;div class="header row m-0">
+		&lt;div class="col gbadge">&lt;img class="img-fluid" src="https://csresearch.s3.amazonaws.com/PEA/2019/promos/1201K/GuaranteeBadge.png">&lt;/div>
+		&lt;div class="col d-flex align-items-center">Risk-free • 100% Money Back Guarantee&lt;/div>
+	&lt;/div>
+	&lt;div class="gcontent row m-0">
+		&lt;div class="col gheadshot m-3">
+			&lt;img class="img-fluid" src="https://csresearch.s3.amazonaws.com/PEA/2019/promos/1201K/CharlesHeadshotNEW.jpg">
+			Charles Sizemore
+		&lt;/div>
+		&lt;div class="col d-flex align-items-center">&lt;p>You get a full 30 days to test-drive &lt;em>&lt;strong>Peak Income&lt;/strong>&lt;/em> to see what it can do for you. If at any time during those 30 days you’re not 100% satisfied that &lt;em>&lt;strong>Peak Income&lt;/strong>&lt;/em> is perfect for you, no worries. You’re entitled to a complete and full refund of your money. Any time after 30 days, you can receive a pro-rated refund. No quibbles, no questions, no problems.&lt;/p>&lt;/div>
+	&lt;/div>
+&lt;/div></code></pre>
 
-<!-- —————————— END PASTE CONTENT —————————— -->
-
-			<div>
+<!--———————————————————— END PROMO BODY CONTENT ———————————————————— -->
+			
 		</div>
-	</div>
+	</div>	
 </div>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-<!-- —————————— END BODY —————————— -->
+<!-- —————————— THIS MONTH + THIS YEAR —————————— -->
+<script type="text/javascript">
+	var months = ['January','February','March','April','May','June','July',
+	'August','September','October','November','December'];       
+	var tomorrow = new Date();
+	tomorrow.setTime(tomorrow.getTime() + (1000*3600*24));       
+	document.getElementById("spanDate").innerHTML = months[tomorrow.getMonth()] + " " + tomorrow.getFullYear();
+</script>
+<!-- —————————— END THIS MONTH + THIS YEAR —————————— -->
 
+
+<script>
+$('i[rel="pre"]').replaceWith(function() {
+    return $('<pre><code>' + $(this).html() + '</code></pre>');
+});
+var pres = document.querySelectorAll('pre,kbd,blockquote');
+for (var i = 0; i < pres.length; i++) {
+  pres[i].addEventListener("dblclick", function () {
+    var selection = getSelection();
+    var range = document.createRange();
+    range.selectNodeContents(this);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }, false);
+}
+</script>
+	
 </body>
+	
 </html>
